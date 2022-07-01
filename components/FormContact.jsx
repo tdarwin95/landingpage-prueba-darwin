@@ -3,10 +3,12 @@ import PropTypes from 'prop-types'
 
 const propTypes = {
     alerta: PropTypes.string.isRequired,
+    contact: PropTypes.object.isRequired,
 	onRegisterContact: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
 }
 
-function  FormContact ({alerta, onRegisterContact}){
+function  FormContact ({alerta, contact, onRegisterContact, onChange}){
     return (
         <div className="contenedor-contactanos">
             <div className={alerta}>Formulario Enviado con Exito</div>
@@ -16,7 +18,7 @@ function  FormContact ({alerta, onRegisterContact}){
 
                     <div className="form-control">
                         <label for="">NOMBRE</label>
-                        <input type="text" name="name" id=""/>
+                        <input type="text" name="name" id="" value={contact.firstname} onChange={(ev)=>onChange(ev)}/>
                     </div>
 
                     <div className="form-control">

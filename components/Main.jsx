@@ -5,7 +5,6 @@ import FilterArticles from './FilterArticles'
 import FormContact from './FormContact'
 import PropTypes from 'prop-types'
 import swal from 'sweetalert'
-import validator from 'validator'
 
 const propTypes = {
 	articles: PropTypes.object.isRequired
@@ -20,11 +19,18 @@ class Main extends Component{
 		this.state = {
 			articles: this.props.articles,
             alerta: 'alert-desactive',
-            contact: null,
+            contact: {
+                firstname: '',
+			    lastname: '',
+                email: '',
+                phone: '',
+            },
+            
 		};
 
         this.handleFilterArticles = this.handleFilterArticles.bind(this)
         this.handleOnRegisterContact = this.handleOnRegisterContact.bind(this)
+        this.handleOnChange = this.handleOnChange.bind(this)
 	}
 
     handleFilterArticles(e, opcion){
@@ -49,7 +55,9 @@ class Main extends Component{
         }
     }
 
-
+    handleOnChange(event) {
+        console.log(event.target.value);
+    }
 
 
     handleOnRegisterContact(event){
@@ -96,8 +104,6 @@ class Main extends Component{
     }
 
 
-
-
     render(){
         return (
             <div>
@@ -127,7 +133,10 @@ class Main extends Component{
 
                 <FormContact
                     onRegisterContact = {this.handleOnRegisterContact}
+                    onChange ={ this.handleOnChange }
                     alerta = {this.state.alerta}
+                    contact = {this.state.contact}
+
                 />
 
             </div>
