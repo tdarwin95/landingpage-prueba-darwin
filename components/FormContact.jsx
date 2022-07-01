@@ -18,7 +18,7 @@ function  FormContact ({alerta, contact, onRegisterContact, onChange}){
 
                     <div className="form-control">
                         <label for="">NOMBRE</label>
-                        <input type="text" name="name" id="" value={contact.firstname} onChange={(ev)=>onChange(ev)}/>
+                        <input type="text" name="name" id="" onChange={(ev)=>onChange(ev)}/>
                     </div>
 
                     <div className="form-control">
