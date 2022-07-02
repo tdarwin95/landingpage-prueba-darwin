@@ -30,7 +30,6 @@ class Main extends Component{
 
         this.handleFilterArticles = this.handleFilterArticles.bind(this)
         this.handleOnRegisterContact = this.handleOnRegisterContact.bind(this)
-        this.handleOnChange = this.handleOnChange.bind(this)
 	}
 
     handleFilterArticles(e, opcion){
@@ -55,24 +54,18 @@ class Main extends Component{
         }
     }
 
-    handleOnChange(event) {
-        console.log(event.target.value);
-    }
 
+    handleOnRegisterContact(data){
 
-    handleOnRegisterContact(event){
-    	event.preventDefault()
-
-    	console.log('registro')
+    	console.log(data)
 
     	const contact = {
-			firstname: event.target.name.value,
-			lastname: event.target.lastname.value,
-            email: event.target.mail.value,
-            phone: event.target.phone.value,
+			firstname: data.firstname,
+			lastname: data.lastname,
+            email: data.email,
+            phone: data.phone,
 		}
 
-        console.log(contact);
 
 		fetch('https://5eed24da4cbc340016330f0d.mockapi.io/api/newsletter', {
 			method: 'POST',
@@ -86,14 +79,9 @@ class Main extends Component{
 	    .then(data => {
 	    	console.log(data)
             console.log('exito')
-            event.target.name.value = '';
-            event.target.lastname.value = '';
-            event.target.mail.value = '';
-            event.target.phone.value = '';
-
             swal('Formulario enviado con exito!!!', '', "success");
-
             console.log(this.state.alerta)
+
 	    })
 	    .catch(err => {
 

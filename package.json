@@ -14,6 +14,7 @@
     "prop-types": "^15.8.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.33.1",
     "react-prototype": "^0.2.1",
     "react-toastify": "^9.0.5",
     "sweetalert": "^2.1.2",

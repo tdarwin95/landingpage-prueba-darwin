@@ -334,6 +334,12 @@
 
  }
 
+ .contactanos .formulario .errorInput{
+
+    border: 1px solid #B72C2C;
+
+ }
+
  .contactanos .formulario input:hover{
 
     border: 1px solid #D8AD3D;
@@ -390,6 +396,16 @@
 
 .alert-desactive{
     display: none;
+}
+
+
+.error{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #B72C2C;
 }
 
  
