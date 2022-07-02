@@ -3,7 +3,6 @@ import Main from "../components/Main"
 
 function HomePage({articles}) {
     return (
-        
         <div>
             <Layout/>
             <Main
@@ -16,7 +15,6 @@ function HomePage({articles}) {
 HomePage.getInitialProps = async (ctx) => {
     const res = await fetch('https://5eed24da4cbc340016330f0d.mockapi.io/api/articles')
     const json = await res.json()
-    console.log(json);
     return { articles: json }
 }
 
