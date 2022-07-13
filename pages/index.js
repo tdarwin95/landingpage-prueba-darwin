@@ -8,6 +8,8 @@ function HomePage({articles}) {
             <Main
                 articles={articles}
             />
+            
+            <footer></footer>
         </div>
     )
 }

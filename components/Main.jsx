@@ -94,40 +94,48 @@ class Main extends Component{
 
     render(){
         return (
-            <div>
-                <Title 
-                    message={'Nuestros artículos'} 
-                />
+            <main role="main">
 
-                <div className="contenedor-articulos">
-                    <div className="contenedor">
-                        <div className="menu">
-                            <FilterArticles
-                                filterArticles={this.handleFilterArticles}
-                            />
-                        </div>
+                <section className='secccion-articulos'>
+                    
+                    <Title 
+                        message={'Nuestros artículos'} 
+                    />
 
-                        <div className="articulos">
-                            <ListArticles
-                                articles={this.state.articles}
-                            />
+                    <div className="contenedor-articulos">
+                        <div className="contenedor">
+                            <section className="menu">
+                                <FilterArticles
+                                    filterArticles={this.handleFilterArticles}
+                                />
+                            </section>
+
+                            <section className="articulos">
+                                <ListArticles
+                                    articles={this.state.articles}
+                                />
+                            </section>
                         </div>
                     </div>
-                </div>
+                </section>
 
-                <Title 
-                    message={'Contáctanos'} 
-                />
+                
+                <section className='secccion-contactanos'>
 
-                <FormContact
-                    onRegisterContact = {this.handleOnRegisterContact}
-                    onChange ={ this.handleOnChange }
-                    alerta = {this.state.alerta}
-                    contact = {this.state.contact}
+                    <Title 
+                        message={'Contáctanos'} 
+                    />
 
-                />
+                    <FormContact
+                        onRegisterContact = {this.handleOnRegisterContact}
+                        onChange ={ this.handleOnChange }
+                        alerta = {this.state.alerta}
+                        contact = {this.state.contact}
 
-            </div>
+                    />
+                </section>
+            </main>
+
         )
     }
 }

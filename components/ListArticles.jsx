@@ -12,9 +12,10 @@ function  ListArticles ({articles}){
                         src={article.image}
                         width={270}
                         height={204}
+                        alt={'Imagen del artculo'}
                     />
                     <div className="descriccion">
-                        <h1>{article.title}</h1>
+                        <h3>{article.title}</h3>
                         <p>{article.content}</p>
                     </div>
 
